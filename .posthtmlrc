@@ -1,0 +1,10 @@
+{
+  "plugins": {
+    "posthtml-beautify": {
+      "rules": {
+        "indent": 2,
+        "blankLines": false
+      }
+    }
+  }
+}

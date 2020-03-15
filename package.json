@@ -16,6 +16,7 @@
     "@ztrehagem/parcel-transformer-pug": "file:build/transformers/pug",
     "globby": "^11.0.0",
     "parcel": "^2.0.0-alpha.3.2",
+    "posthtml-beautify": "^0.3.1",
     "pug": "^2.0.4",
     "sass": "^1.26.3"
   },
