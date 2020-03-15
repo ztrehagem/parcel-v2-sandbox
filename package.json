@@ -4,13 +4,20 @@
   "private": true,
   "author": "",
   "scripts": {
+    "dev": "parcel serve --no-cache src/index.pug",
+    "build": "parcel build --no-cache --no-minify src/index.pug",
+    "prod": "parcel build --no-cache src/index.pug",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "dependencies": {
-    "parcel": "^2.0.0-alpha.3.2"
+  "alias": {
+    "~": "./src",
+    "~~": "."
   },
-  "devDependencies": {
+  "dependencies": {
     "@ztrehagem/parcel-transformer-pug": "file:build/transformers/pug",
-    "pug": "^2.0.4"
+    "globby": "^11.0.0",
+    "parcel": "^2.0.0-alpha.3.2",
+    "pug": "^2.0.4",
+    "sass": "^1.26.3"
   }
 }

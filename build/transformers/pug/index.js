@@ -19,7 +19,7 @@ exports.default = new Transformer({
     const pug = await options.packageManager.require('pug', asset.filePath);
     const content = await asset.getCode();
     const render = pug.compile(content, {
-      debug: true,
+      debug: false,
       compileDebug: false,
       basedir: config.basedir ? path.resolve(config.basedir) : path.dirname(asset.filePath),
       filename: asset.filePath,
