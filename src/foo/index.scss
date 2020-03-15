@@ -1,0 +1,9 @@
+@import '~/src/_assets//styles/abstract.scss';
+
+.page-foo {
+  color: red;
+
+  @include portrait {
+    color: blue;
+  }
+}

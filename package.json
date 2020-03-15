@@ -6,12 +6,11 @@
   "scripts": {
     "dev": "parcel serve --no-cache src/index.pug",
     "build": "parcel build --no-cache --no-minify src/index.pug",
-    "prod": "parcel build --no-cache src/index.pug",
+    "prod": "parcel build --no-cache --no-source-maps src/index.pug",
+    "preprod": "npm run clean",
+    "clean": "rm -rf dist",
+    "serve": "http-server dist",
     "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "alias": {
-    "~": "./src",
-    "~~": "."
   },
   "dependencies": {
     "@ztrehagem/parcel-transformer-pug": "file:build/transformers/pug",
@@ -19,5 +18,8 @@
     "parcel": "^2.0.0-alpha.3.2",
     "pug": "^2.0.4",
     "sass": "^1.26.3"
+  },
+  "devDependencies": {
+    "http-server": "^0.12.1"
   }
 }

@@ -1,4 +1,13 @@
-extends /_views/layouts/default
+extends /_assets/layouts/default/index
+
+block title
+  title page-foo
+
+block append styles
+  link(rel="stylesheet", href="./index.scss")
+
+block append scripts
+  script(src="./index.js" defer)
 
 block main
   .page-foo

@@ -1,10 +1,15 @@
+const path = require('path')
 const { default: Parcel } = require('@parcel/core')
 const { NodePackageManager } = require('@parcel/package-manager')
 const { NodeFS } = require('@parcel/fs')
 const globby = require('globby')
 
 ;(async () => {
-  const entries = globby.sync(['**/*.pug', '!**/@(_*)/**', '!_*'], { cwd: './src' }).map((entry) => `src/${entry}`)
+  const srcDir = './src'
+
+  const entries = globby
+    .sync(['**/*.pug', '!**/@(_*)/**'], { cwd: srcDir })
+    .map((entry) => path.join(srcDir, entry))
   console.log(entries)
 
   const packageManager = new NodePackageManager(new NodeFS())
@@ -19,13 +24,15 @@ const globby = require('globby')
     },
     patchConsole: true,
     disableCache: true,
-    mode: 'production',
+    mode: 'development',
     minify: false,
+    sourceMaps: false,
     publicUrl: '/base/',
     distDir: 'dist',
     autoinstall: false,
     env: {
-      NODE_ENV: 'production',
+      NODE_ENV: 'development',
+      minify: false,
     },
   })
 
